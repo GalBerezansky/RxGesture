@@ -67,7 +67,7 @@ extension Reactive where Base: NSGestureRecognizer {
                 }
                 gestureTarget.dispose()
             }
-        }.takeUntil(self.deallocated)
+        }.take(until: self.deallocated)
 
         return ControlEvent(events: source)
     }
